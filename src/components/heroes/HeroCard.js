@@ -9,7 +9,7 @@ const HeroCard = ({
   characters,
 }) => {
   return (
-    <div className="card g-0 m-3" style={{ maxWidth: 340 }}>
+    <div className="card g-0 m-3" style={{ maxWidth: 400 }}>
       <div className="row g-0 ">
         <div className="col-md-4">
           <img
