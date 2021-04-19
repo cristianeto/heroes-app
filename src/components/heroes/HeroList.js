@@ -1,15 +1,16 @@
 import React from "react";
 import { getHeroesByPublisher } from "../../selectors/getHeroesByPublisher";
+import HeroCard from "./HeroCard";
 
 const HeroList = ({ publisher }) => {
   const heroes = getHeroesByPublisher(publisher);
 
   return (
-    <ul>
+    <div className="row d-flex justify-content-center">
       {heroes.map((hero) => (
-        <li key={hero.id}>{hero.superhero}</li>
+        <HeroCard key={hero.id} {...hero} />
       ))}
-    </ul>
+    </div>
   );
 };
 
