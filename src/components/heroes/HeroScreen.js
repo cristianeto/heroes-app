@@ -31,7 +31,7 @@ const HeroScreen = ({ history }) => {
       <div className="col-4">
         <img
           alt={superhero}
-          className="img-thumbnail"
+          className="img-thumbnail animate__animated animate__fadeInLeft"
           src={`../assets/heroes/${heroId}.jpg`}
         />
       </div>
