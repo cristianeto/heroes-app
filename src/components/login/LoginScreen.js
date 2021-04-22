@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { types } from "../../types/types";
+import { AuthContext } from "../../auth/AuthContext";
 
 const LoginScreen = ({ history }) => {
+  const { dispatch } = useContext(AuthContext);
+
   const handleClick = () => {
     //? Diferencia entre psuh y replace...
     //? replace no guarda la historia de navegacion, no permite ir ATRAS
     //history.push("/");
+
+    const action = {
+      type: types.login,
+      payload: { name: "Cristian" },
+    };
+    dispatch(action);
     history.replace("/");
   };
   return (
