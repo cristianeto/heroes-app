@@ -4,6 +4,7 @@ import { AuthContext } from "../../auth/AuthContext";
 
 const LoginScreen = ({ history }) => {
   const { dispatch } = useContext(AuthContext);
+  const lastPath = localStorage.getItem("lastPath") || "/";
 
   const handleClick = () => {
     //? Diferencia entre psuh y replace...
@@ -15,7 +16,7 @@ const LoginScreen = ({ history }) => {
       payload: { name: "Cristian" },
     };
     dispatch(action);
-    history.replace("/");
+    history.replace(lastPath);
   };
   return (
     <div className="container mt-5">
