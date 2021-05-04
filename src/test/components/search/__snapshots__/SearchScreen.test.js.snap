@@ -101,6 +101,58 @@ exports[`Testing in <SearchScreen /> should show a default value in my input whe
 </div>
 `;
 
+exports[`Testing in <SearchScreen /> should show a html with error info if hero doesnt exist 1`] = `
+<div>
+  <h1>
+    Search Screen
+  </h1>
+  <div
+    className="row"
+  >
+    <div
+      className="col-5"
+    >
+      <h4>
+        Search Form
+      </h4>
+      <hr />
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="form-control"
+          name="searchText"
+          onChange={[Function]}
+          placeholder="Find your hero"
+          type="text"
+          value="batman123123"
+        />
+        <button
+          className="btn m-1 btn-block btn-outline-primary"
+        >
+          Search
+        </button>
+      </form>
+    </div>
+    <div
+      className="col-7"
+    >
+      <h4>
+        Results
+      </h4>
+      <hr />
+      <div
+        className="alert alert-danger"
+      >
+        There is no a hero with: 
+        batman123123
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Testing in <SearchScreen /> should show correctly with default values 1`] = `
 <div>
   <h1>
