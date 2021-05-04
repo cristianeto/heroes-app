@@ -1,28 +1,28 @@
-import React, { useContext } from "react";
-import { types } from "../../types/types";
-import { AuthContext } from "../../auth/AuthContext";
+import React, { useContext } from 'react';
+import { types } from '../../types/types';
+import { AuthContext } from '../../auth/AuthContext';
 
 const LoginScreen = ({ history }) => {
   const { dispatch } = useContext(AuthContext);
-  const lastPath = localStorage.getItem("lastPath") || "/";
 
   const handleClick = () => {
+    const lastPath = localStorage.getItem('lastPath') || '/';
     //? Diferencia entre psuh y replace...
     //? replace no guarda la historia de navegacion, no permite ir ATRAS
     //history.push("/");
 
     const action = {
       type: types.login,
-      payload: { name: "Cristian" },
+      payload: { name: 'Cristian' },
     };
     dispatch(action);
     history.replace(lastPath);
   };
   return (
-    <div className="container mt-5">
+    <div className='container mt-5'>
       <h1>LoginScreen</h1>
       <hr />
-      <button className="btn btn-primary" onClick={handleClick}>
+      <button className='btn btn-primary' onClick={handleClick}>
         Login
       </button>
     </div>

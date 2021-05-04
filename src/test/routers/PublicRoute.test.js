@@ -1,7 +1,7 @@
 import PublicRoute from '../../routers/PublicRoute';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
-import LoginScreen from '../../components/login/LoginScreen';
+//import LoginScreen from '../../components/login/LoginScreen';
 
 describe('Testing in <PublicRoute/>', () => {
   const props = {
@@ -20,7 +20,7 @@ describe('Testing in <PublicRoute/>', () => {
         />
       </MemoryRouter>
     );
-    console.log(wrapper.html());
+    //console.log(wrapper.html());
     expect(wrapper.find('span').exists()).toBe(true);
   });
 
@@ -34,7 +34,7 @@ describe('Testing in <PublicRoute/>', () => {
         />
       </MemoryRouter>
     );
-    console.log(wrapper.html());
+    //console.log(wrapper.html());
     expect(wrapper.find('span').exists()).toBe(false);
   });
 });

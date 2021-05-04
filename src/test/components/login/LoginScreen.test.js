@@ -33,4 +33,16 @@ describe('Testing in <LoginScreen /> component', () => {
     expect(historyMock.replace).toHaveBeenCalledTimes(1);
     expect(historyMock.replace).toHaveBeenCalledWith('/');
   });
+
+  test('should call replace method of history with a value of LocalStorage', () => {
+    const handleClick = wrapper.find('button').prop('onClick');
+    handleClick();
+
+    expect(historyMock.replace).toHaveBeenCalledTimes(1);
+    expect(historyMock.replace).toHaveBeenCalledWith('/');
+
+    localStorage.setItem('lastPath', '/dc');
+    handleClick();
+    expect(historyMock.replace).toHaveBeenCalledWith('/dc');
+  });
 });
