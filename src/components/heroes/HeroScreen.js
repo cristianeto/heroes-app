@@ -2,9 +2,8 @@ import React, { useMemo } from 'react';
 import { useParams } from 'react-router';
 import { getHeroById } from '../../selectors/getHeroById';
 import { Redirect } from 'react-router-dom';
+import { heroImages } from '../../helpers/heroImages';
 //import batman from '../../assets/heroes/dc-batman.jpg'; //? Sirve para utilizar imagenes estaticas
-
-const heroImages = require.context('../../assets/heroes', true);
 
 const HeroScreen = ({ history }) => {
   const { heroId } = useParams();
