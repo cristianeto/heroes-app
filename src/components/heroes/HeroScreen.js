@@ -2,6 +2,9 @@ import React, { useMemo } from 'react';
 import { useParams } from 'react-router';
 import { getHeroById } from '../../selectors/getHeroById';
 import { Redirect } from 'react-router-dom';
+//import batman from '../../assets/heroes/dc-batman.jpg'; //? Sirve para utilizar imagenes estaticas
+
+const heroImages = require.context('../../assets/heroes', true);
 
 const HeroScreen = ({ history }) => {
   const { heroId } = useParams();
@@ -10,13 +13,8 @@ const HeroScreen = ({ history }) => {
   // console.log('hero:' + hero + '; heroId:' + heroId);
   if (!hero) return <Redirect to='/' />;
 
-  const {
-    superhero,
-    publisher,
-    alter_ego,
-    first_appearance,
-    characters,
-  } = hero;
+  const { superhero, publisher, alter_ego, first_appearance, characters } =
+    hero;
 
   const handleReturn = () => {
     if (history.length <= 2) {
@@ -30,9 +28,11 @@ const HeroScreen = ({ history }) => {
     <div className='row mt-5'>
       <div className='col-4'>
         <img
+          src={heroImages(`./${heroId}.jpg`).default}
           alt={superhero}
           className='img-thumbnail animate__animated animate__fadeInLeft'
-          src={`../assets/heroes/${heroId}.jpg`}
+          // src={`../assets/heroes/${heroId}.jpg`}   //? desde assets en public
+          //src={batman} //? cuando utilizamos una imagen con import
         />
       </div>
       <div className='col-8'>
